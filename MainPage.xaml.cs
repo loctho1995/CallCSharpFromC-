@@ -267,5 +267,10 @@ namespace cocos2d
                 //MessageBox will show string input from C++.
             });
         }
+
+        public void Exit()
+        {
+            App.Current.Terminate();
+        }
     }
 }

@@ -10,7 +10,6 @@ namespace cocos2d
 	{
 	public:
 		 virtual void CallFunc(Platform::String ^mess);
-		 virtual void Exit();
 	};
 
 	public ref class PlatformCenter sealed
@@ -19,15 +18,12 @@ namespace cocos2d
 		PlatformCenter();
 		static void setCallback(ICallback ^callback);
 		static void callFunc(Platform::String^ s);
-		static void Exit();
 	};	
 };
 
 class BackPressed
 {
 	public:
-		static BackPressed *myptr;
-
 		BackPressed()
 		{
 			myptr = this;
@@ -42,6 +38,9 @@ class BackPressed
 		{
 			return myptr;
 		}
+
+		static BackPressed *myptr;
+
 };
 
 class HelloWorld : public cocos2d::Layer, public BackPressed

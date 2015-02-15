@@ -21,14 +21,7 @@ namespace cocos2d
 	{
 		callBack = callback;
 	}
-
-	void PlatformCenter::Exit()
-	{
-		callBack->Exit();
-	}
 };
-
-BackPressed* BackPressed::myptr = nullptr;
 
 Scene* HelloWorld::createScene()
 {
@@ -106,7 +99,7 @@ bool HelloWorld::init()
 
 void HelloWorld::backPressCalled()
 {
-	PlatformCenter::Exit();
+	CallCSharp();
 }
 
 void HelloWorld::CallCSharp()
